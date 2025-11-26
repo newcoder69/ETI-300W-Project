@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>HP WXP Prototype</h1>
+
+  <label>Employee or Device ID:</label>
+  <input [(ngModel)]="deviceId" placeholder="Enter device ID">
+
+  <button (click)="sendRequest()">Submit</button>
+
+  <p *ngIf="status">{{ status }}</p>
+
+  <div *ngIf="responseData">
+    <h2>Telemetry Data</h2>
+    <pre>{{ responseData | json }}</pre>
+  </div>
+</div>

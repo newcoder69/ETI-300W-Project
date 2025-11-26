@@ -2,11 +2,11 @@ document.getElementById("sendButton").addEventListener("click", () => {
   const message = document.getElementById("messageInput").value;
 
   // Replace this with target IP
-  const targetIP = "http://0.0.0.0:3000";
+  const targetIP = "http://127.0.0.1:5000";
 
   // Sends the string as JSON in a POST request
   fetch(targetIP, {
-    method: "POST",
+    method: "GET",
     headers: {
       "Content-Type": "application/json"
     },
@@ -24,3 +24,13 @@ document.getElementById("sendButton").addEventListener("click", () => {
     document.getElementById("status").textContent = "Error sending message.";
   });
 });
+
+
+
+/**
+ * Make a text box that has a name and IP
+ * This will be a post command
+ * 
+ * 
+ * 
+ */

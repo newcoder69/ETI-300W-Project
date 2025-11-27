@@ -1,0 +1,38 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 20px;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.right-side {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.employee-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+mat-toolbar {
+  background-color: rgb(74, 85, 96);
+  color: white;
+}

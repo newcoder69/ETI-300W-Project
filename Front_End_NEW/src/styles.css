@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url('assets/background.png');
+    background-size: cover;
+    /* scale to cover entire viewport */
+    background-position: center;
+    /* center the image */
+    background-repeat: no-repeat;
+    /* do not repeat */
+}

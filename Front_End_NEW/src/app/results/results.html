@@ -1,0 +1,22 @@
+<div *ngIf="loading" style="text-align:center; margin-top: 50px;">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  <p>Loading device data for {{ employee }}...</p>
+</div>
+
+<div *ngIf="!loading">
+  <h2>Device Data for {{ employee }}</h2>
+  <table mat-table [dataSource]="deviceData" style="width:100%; margin-top:20px;">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let device">{{ device.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef>Model</th>
+      <td mat-cell *matCellDef="let device">{{ device.model }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name','model']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name','model'];"></tr>
+  </table>
+</div>

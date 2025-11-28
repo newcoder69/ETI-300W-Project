@@ -36,3 +36,11 @@ mat-toolbar {
   background-color: rgb(74, 85, 96);
   color: white;
 }
+
+.search-header {
+  text-align: center;
+  font-size: 1.5rem;      /* Large text */
+  font-weight: 600;       /* Semi-bold */
+  margin-bottom: 20px;    /* Space above search bar */
+  color: var(--mat-sys-on-surface); /* Matches Angular Material theme */
+}

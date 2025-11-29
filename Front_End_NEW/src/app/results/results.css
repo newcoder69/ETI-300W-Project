@@ -1,0 +1,14 @@
+.spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  height: 80vh;            /* take most of the viewport height */
+  text-align: center;
+}
+
+.spinner-wrapper p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}

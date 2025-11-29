@@ -1,15 +1,16 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+
 import { HomepageComponent } from './homepage/homepage';
+import { ResultsComponent } from './results/results';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter([
-      { path: '', component: HomepageComponent } // default route
+      { path: '', component: HomepageComponent },
+      { path: 'results', component: ResultsComponent }
     ]),
-    provideClientHydration(withEventReplay()),
     importProvidersFrom(FormsModule)
   ]
 };

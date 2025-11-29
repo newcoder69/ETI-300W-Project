@@ -1,39 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgZone } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
-// Angular Material modules
+// Angular Material
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
-  standalone: true,
   selector: 'app-results',
+  standalone: true,
   templateUrl: './results.html',
   styleUrls: ['./results.css'],
   imports: [CommonModule, MatProgressSpinnerModule, MatTableModule]
 })
 export class ResultsComponent implements OnInit {
-  employee = '';
-  loading = true;
+  employee: string = '';
+  loading: boolean = true;
 
+  displayedColumns: string[] = ['name', 'model'];
   deviceData: any[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private ngZone: NgZone,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
-    // Get the query param from homepage
+
     this.route.queryParams.subscribe(params => {
       this.employee = params['employee'] || '';
     });
 
-    // Simulate loading delay
+    // Simulate API call with delay — run inside NgZone to guarantee change detection
     setTimeout(() => {
-      this.deviceData = [
-        { name: 'Laptop 1', model: 'HP 840 G9' },
-        { name: 'Phone 1', model: 'HP Elite x3' }
-      ];
-      this.loading = false;
+
+      // Use ngZone.run to ensure change detection runs
+      this.ngZone.run(() => {
+        this.deviceData = [
+          { name: 'Laptop 1', model: 'HP 840 G9' },
+          { name: 'Monitor 2', model: 'HP 27f' }
+        ];
+        this.loading = false;
+
+        // force detect changes immediately
+          this.cdr.detectChanges();
+
+      });
     }, 1500);
   }
 }

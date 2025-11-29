@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, provideRouter } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage';
+import { RouterOutlet} from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,19 @@ import { HomepageComponent } from './homepage/homepage';
   imports: [RouterOutlet],
   template: `<router-outlet></router-outlet>`,
 })
-export class App {}
+export class App {
+    constructor(private router: Router) {
+      router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          const body = document.body;
+          if (event.url === '/' || event.url === '/homepage') {
+            body.className = 'homepage-background';
+          } else if (event.url.startsWith('/results')) {
+            body.className = 'results-background';
+          } else {
+            body.className = '';
+          }
+        }
+      });
+    }
+}

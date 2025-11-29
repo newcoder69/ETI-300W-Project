@@ -1,31 +1,43 @@
 .spinner-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  height: 80vh;            /* take most of the viewport height */
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical centering */
+    align-items: center;
+    /* horizontal centering */
+    height: 80vh;
+    /* take most of the viewport height */
+    text-align: center;
 }
 
 .spinner-wrapper p {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #333;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 mat-toolbar {
-  background-color: rgb(74, 85, 96);
-  color: white;
+    background-color: rgb(74, 85, 96);
+    color: white;
+}
+
+.device-header {
+    text-align: center;
+    /* centers the text horizontally */
 }
 
 .table-container {
-  padding: 0 50px; /* left and right padding */
+    padding: 0 8%;
+    /* left and right padding */
 }
 
 .styled-table {
-  width: 100%;
-  margin-top: 20px;
-  background-color: #D7EEF9; /* light gray background */
-  border-radius: 10px; /* rounded corners */
-  overflow: hidden; /* ensures rounded corners work */
+    width: 100%;
+    margin-top: 20px;
+    background-color: #E8F5FC;
+    /* light gray background */
+    border-radius: 20px;
+    /* rounded corners */
+    overflow: hidden;
+    /* ensures rounded corners work */
 }

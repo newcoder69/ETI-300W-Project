@@ -7,11 +7,19 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-image: url('assets/background.png');
+  
+}
+
+.homepage-background {
+    background-image: url('assets/homepage_background.png');
     background-size: cover;
-    /* scale to cover entire viewport */
     background-position: center;
-    /* center the image */
     background-repeat: no-repeat;
-    /* do not repeat */
+}
+
+.results-background {
+    background-image: url('assets/results_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

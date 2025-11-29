@@ -1,5 +1,7 @@
 <mat-toolbar color="primary">
-  Welcome to HP WXP Prototype
+  <span style="cursor: pointer;" [routerLink]="['/']">
+    Owl Analytics
+  </span>
 </mat-toolbar>
 
 <div class="home-container">
@@ -13,8 +15,8 @@
 
   <!-- Right column: search and button -->
   <div class="right-side">
-    <p class="search-header">Employee Lookup</p>
-    
+    <p class="search-header">Welcome! Please Enter An Employee To Lookup.</p>
+
     <mat-form-field appearance="fill" class="employee-input">
       <mat-label>Search Employee</mat-label>
       <input matInput [(ngModel)]="employeeName" placeholder="Enter employee name">

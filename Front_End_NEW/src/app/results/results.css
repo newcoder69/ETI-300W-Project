@@ -12,3 +12,20 @@
   font-size: 1.2rem;
   color: #333;
 }
+
+mat-toolbar {
+  background-color: rgb(74, 85, 96);
+  color: white;
+}
+
+.table-container {
+  padding: 0 50px; /* left and right padding */
+}
+
+.styled-table {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #D7EEF9; /* light gray background */
+  border-radius: 10px; /* rounded corners */
+  overflow: hidden; /* ensures rounded corners work */
+}

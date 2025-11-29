@@ -3,17 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgZone } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 // Angular Material
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 @Component({
   selector: 'app-results',
   standalone: true,
   templateUrl: './results.html',
   styleUrls: ['./results.css'],
-  imports: [CommonModule, MatProgressSpinnerModule, MatTableModule]
+  imports: [CommonModule, MatProgressSpinnerModule, MatTableModule, MatToolbarModule, RouterModule]
 })
 export class ResultsComponent implements OnInit {
   employee: string = '';

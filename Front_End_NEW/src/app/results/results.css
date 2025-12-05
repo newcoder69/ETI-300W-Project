@@ -9,7 +9,57 @@
     /* take most of the viewport height */
     text-align: center;
 }
+.chart-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr)) ;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
 
+.chart-card {
+background: skyblue;
+border-radius: 20px;
+height: 400px !important;
+width: 400px !important;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+.bar-chart {
+background: skyblue;
+border-radius: 20px;
+height: 400px !important;
+width: 400px !important;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.bar-chart canvas {
+
+border-radius: 20px;
+height: 220px !important;
+width: 220px !important;
+
+
+
+}
+.chart-card canvas {
+
+height: 350px !important;
+width: 350px !important;
+margin-bottom: 20px;
+}
+ 
+ 
 .spinner-wrapper p {
     margin-top: 15px;
     font-size: 1.2rem;

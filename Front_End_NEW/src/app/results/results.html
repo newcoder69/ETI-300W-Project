@@ -9,25 +9,32 @@
     <p>Loading device data for {{ employee }}...</p>
 </div>
 
-<div *ngIf="!loading">
+<div [hidden]="loading">
 
-    <h2 class="device-header">Device Data For {{ employee }}</h2>
+   <div class="chart-grid">
 
-    <div class="table-container">
-        <table mat-table [dataSource]="deviceData" class="styled-table">
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>Name</th>
-                <td mat-cell *matCellDef="let device">{{ device.name }}</td>
-            </ng-container>
+    <div class="bar-chart">
+        <h3>CPU Usage</h3>
+   <canvas id="cpuChart"></canvas>
+    </div>
 
-            <ng-container matColumnDef="model">
-                <th mat-header-cell *matHeaderCellDef>Model</th>
-                <td mat-cell *matCellDef="let device">{{ device.model }}</td>
-            </ng-container>
+    <div class="chart-card">
+        <h3>Disk Space</h3>
+   <canvas id="discChart"></canvas>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+    </div>
+
+    <div class="bar-chart">
+        <h3>CPU Frequency</h3>
+    <canvas id="freqChart"></canvas>
+   </div>
+
+   <div class="bar-chart">
+        <h3>Ram Usage</h3>
+    <canvas id="ramChart"></canvas>
+   </div>
+
+
     </div>
 
 </div>
